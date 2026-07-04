@@ -15,9 +15,12 @@ Ini adalah tempat saya mengumpulkan potongan-potongan informasi, mendokumentasik
 ### 📌 Catatan Pilihan
 
 - [[docker-best-practices]]: Panduan isolasi container homelab.
-- [[dekonstruksi-audio-bmth]]: Bedah produksi audio metal modern.
+- [[dekonstruksi-autio-bmth]]: Bedah produksi audio metal modern.
+- [[git-workflow]]: Strategi branching dan commit message.
+- [[linux-homelab-setup]]: Dasar konfigurasi server Linux.
+- [[rekomendasi-album]]: Album metal dengan produksi gila-gilaan.
 
 ### 🗂️ Telusuri Berdasarkan Topik
 
 - `/koding` — Catatan seputar arsitektur software, DevOps, dan framework.
-- `/personal` — Rencana fisik, catatan buku, dan refleksi diri.
+- `/musik` — Eksplorasi produksi audio, review, dan rekomendasi.
