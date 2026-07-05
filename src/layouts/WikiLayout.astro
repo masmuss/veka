@@ -1,0 +1,39 @@
+---
+import WikiHeader from "@/components/wiki/WikiHeader.astro";
+import WikiSidebarLeft from "@/components/wiki/WikiSidebarLeft.astro";
+import WikiSidebarRight from "@/components/wiki/WikiSidebarRight.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  growthStage: string;
+  updatedAt: Date;
+}
+
+const { title, description, growthStage, updatedAt } = Astro.props;
+---
+
+<BaseLayout title={title} description={`${description} - Vekawiki`}>
+  <div class="min-h-screen bg-background text-foreground">
+    <div
+      class="grid grid-cols-1 md:grid-cols-[250px_1fr_250px] gap-8 max-w-7xl mx-auto px-4 py-8 relative"
+    >
+      <aside class="hidden md:block">
+        <WikiSidebarLeft />
+      </aside>
+
+      <main class="min-w-0">
+        <WikiHeader {title} {growthStage} {updatedAt} />
+
+        <article class="prose prose-stone dark:prose-invert max-w-none">
+          <slot />
+        </article>
+      </main>
+
+      <aside class="hidden md:block">
+        <WikiSidebarRight />
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

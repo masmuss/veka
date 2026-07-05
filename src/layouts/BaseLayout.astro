@@ -1,0 +1,40 @@
+---
+import "@/assets/styles/global.css";
+import { Font } from "astro:assets";
+import ThemeScript from "@/components/ThemeScript.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = "Minimalist Digital Garden",
+  image = "/og-image.png",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <Font cssVariable="--font-sans" />
+    <Font cssVariable="--font-mono" />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <ThemeScript />
+  </head>
+  <body
+    class="bg-background text-foreground min-h-screen selection:bg-primary/30 selection:text-primary"
+  >
+    <slot />
+  </body>
+</html>

@@ -1,11 +1,76 @@
 ---
-import Welcome from "../components/Welcome.astro";
-import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Kbd } from "@/components/ui/kbd";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const allNotes = await getCollection("wiki");
+
+const pinnedNotes = allNotes.filter((note) => note.data.isPinned);
+
+const recentNotes = allNotes
+  .sort((a, b) => b.data.updatedAt.valueOf() - a.data.updatedAt.valueOf())
+  .slice(0, 5);
 ---
 
-<Layout>
-  <Welcome />
-</Layout>
+<BaseLayout title="Astro Garden - Home">
+  <main class="max-w-3xl mx-auto px-4 py-16 md:py-24">
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold tracking-tight mb-4">Astro Garden</h1>
+      <p class="text-lg text-muted-foreground">
+        A minimalist digital garden. Press <Kbd class="mx-1">⌘K</Kbd> anytime to search
+        my collection of notes.
+      </p>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold border-b border-border pb-2 mb-4">
+        📌 Pinned Notes
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {
+          pinnedNotes.map((note) => (
+            <a href={`/wiki/${note.id}`} class="block group">
+              <Card class="p-4 transition-colors hover:border-primary">
+                <h3 class="font-medium group-hover:text-primary transition-colors">
+                  {note.data.title}
+                </h3>
+                <div class="mt-2 flex gap-2">
+                  <Badge variant="secondary" class="text-xs">
+                    {note.data.growthStage}
+                  </Badge>
+                </div>
+              </Card>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold border-b border-border pb-2 mb-4">
+        🌱 Recently Updated
+      </h2>
+      <ul class="space-y-3">
+        {
+          recentNotes.map((note) => (
+            <li class="flex justify-between items-baseline gap-4">
+              <a
+                href={`/wiki/${note.id}`}
+                class="text-foreground hover:text-primary hover:underline decoration-border underline-offset-4"
+              >
+                {note.data.title}
+              </a>
+              <span class="text-sm text-muted-foreground whitespace-nowrap shrink-0">
+                {new Intl.DateTimeFormat("en-US", {
+                  dateStyle: "medium",
+                }).format(note.data.updatedAt)}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</BaseLayout>

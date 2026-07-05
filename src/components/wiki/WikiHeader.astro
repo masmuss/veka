@@ -1,0 +1,29 @@
+---
+import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+
+interface Props {
+  title: string;
+  growthStage: string;
+  updatedAt: Date;
+}
+
+const { title, growthStage, updatedAt } = Astro.props;
+---
+
+<header class="mb-10">
+  <Breadcrumb class="mb-4" />
+  <h1 class="text-4xl font-bold tracking-tight mb-4">{title}</h1>
+
+  <div class="flex items-center gap-3 mb-6">
+    <Badge variant="secondary">{growthStage}</Badge>
+    <span class="text-sm text-muted-foreground">
+      Last update on {
+        updatedAt.toLocaleDateString("en-US", { dateStyle: "medium" })
+      }
+    </span>
+  </div>
+
+  <Separator />
+</header>
