@@ -161,3 +161,8 @@
     }
   }
 }
+
+.dark .custom-prose pre.astro-code,
+.dark .custom-prose pre.astro-code span {
+  color: var(--shiki-dark) !important;
+}
