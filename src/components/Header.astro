@@ -1,0 +1,26 @@
+---
+import { SITE } from "@/lib/site-config";
+import { Button } from "@/components/ui/button";
+import { Kbd } from "@/components/ui/kbd";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+---
+
+<header
+  class="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-sm"
+>
+  <div class="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
+    <a href="/" class="font-semibold tracking-tight">{SITE.name}</a>
+    <div class="flex items-center gap-2">
+      <Button
+        variant="outline"
+        size="sm"
+        class="flex items-center gap-2"
+        onclick="window.__openSearch?.()"
+      >
+        <span>Search</span>
+        <Kbd>⌘K</Kbd>
+      </Button>
+      <ThemeToggle />
+    </div>
+  </div>
+</header>

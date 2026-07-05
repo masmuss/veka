@@ -2,6 +2,7 @@
 import "@/assets/styles/global.css";
 import { Font } from "astro:assets";
 import ThemeScript from "@/components/ThemeScript.astro";
+import Header from "@/components/Header.astro";
 import Search from "@/components/search/Search.astro";
 import { SITE } from "@/lib/site-config";
 
@@ -37,6 +38,7 @@ const {
   <body
     class="bg-background text-foreground min-h-screen selection:bg-primary/30 selection:text-primary"
   >
+    <Header />
     <slot />
     <Search />
   </body>
