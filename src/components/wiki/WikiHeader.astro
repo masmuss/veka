@@ -22,6 +22,8 @@ const { title, breadcrumbs, growthStage, updatedAt } = Astro.props;
 <header class="mb-10">
   <Breadcrumb class="mb-4">
     <BreadcrumbList>
+      <BreadcrumbItem><a href="/">Home</a></BreadcrumbItem>
+      <BreadcrumbSeparator />
       {
         breadcrumbs.map((breadcrumb, index) => (
           <>
