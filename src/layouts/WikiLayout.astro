@@ -9,14 +9,30 @@ import {
   type Breadcrumb,
 } from "@/lib/wiki/generate-breadcrumbs";
 
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
 interface Props {
   title: string;
   description: string;
   growthStage: string;
   updatedAt: Date;
+  headings?: Heading[];
+  tags?: string[];
 }
 
-const { title, description, growthStage, updatedAt } = Astro.props;
+const {
+  title,
+  description,
+  growthStage,
+  updatedAt,
+  headings = [],
+  tags = [],
+} = Astro.props;
+
 const breadcrumbs = generateBreadcrumbs(Astro.url.pathname);
 ---
 
@@ -38,7 +54,7 @@ const breadcrumbs = generateBreadcrumbs(Astro.url.pathname);
       </main>
 
       <aside class="hidden md:block">
-        <WikiSidebarRight />
+        <WikiSidebarRight headings={headings} {tags} />
       </aside>
     </div>
   </div>
