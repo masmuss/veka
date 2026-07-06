@@ -107,7 +107,7 @@ You can link to other notes using wiki links: [[git-workflow]] or [[eduos-overvi
 > [!warning]
 > This is a warning callout!
 
-> [!danger]
+> [!CAUTION]
 > Watch out!
 
 ## Details and Summary
