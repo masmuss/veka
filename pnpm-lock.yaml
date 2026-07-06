@@ -35,9 +35,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      remark-sub-super:
-        specifier: ^1.0.21
-        version: 1.0.21
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
@@ -57,9 +54,6 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^21.2.0
         version: 21.2.0
-      '@typescript-eslint/parser':
-        specifier: ^8.62.1
-        version: 8.62.1(eslint@10.6.0(jiti@2.6.1))(typescript@6.0.3)
       eslint:
         specifier: ^10.6.0
         version: 10.6.0(jiti@2.6.1)
@@ -87,18 +81,12 @@ importers:
       remark-github-blockquote-alert:
         specifier: ^2.1.0
         version: 2.1.0
-      remark-highlight-mark:
-        specifier: ^1.4.0
-        version: 1.4.0
       remark-math:
         specifier: ^6.0.0
         version: 6.0.0
       remark-wiki-link:
         specifier: ^2.0.1
         version: 2.0.1
-      shadcn:
-        specifier: ^4.12.0
-        version: 4.12.0(typescript@6.0.3)
       tw-animate-css:
         specifier: ^1.4.0
         version: 1.4.0
@@ -2858,9 +2846,6 @@ packages:
   mdast-util-gfm@3.1.0:
     resolution: {integrity: sha512-0ulfdQOM3ysHhCJ1p06l0b0VKlhU0wuQs3thxZQagjcjPrlFRqY215uZGHHJan9GEAXd9MbfPjFJz+qMkVR6zQ==}
 
-  mdast-util-highlight-mark@1.2.2:
-    resolution: {integrity: sha512-OYumVoytj+B9YgwzBhBcYUCLYHIPvJtAvwnMyKhUXbfUFuER5S+FDZyu9fadUxm2TCT5fRYK3jQXh2ioWAxrMw==}
-
   mdast-util-math@3.0.0:
     resolution: {integrity: sha512-Tl9GBNeG/AhJnQM221bJR2HPvLOSnLE/T9cJI9tlc6zwQk2nPk/4f0cHkOdEixQPC/j8UtKDdITswvLAy1OZ1w==}
 
@@ -2949,9 +2934,6 @@ packages:
 
   micromark-extension-gfm@3.0.0:
     resolution: {integrity: sha512-vsKArQsicm7t0z2GugkCKtZehqUm31oeGBV/KVSorWSy8ZlNAv7ytjFhvaryUiCUJYqs+NoE6AFhpQvBTM6Q4w==}
-
-  micromark-extension-highlight-mark@1.2.0:
-    resolution: {integrity: sha512-huGtbd/9kQsMk8u7nrVMaS5qH/47yDG6ZADggo5Owz5JoY8wdfQjfuy118/QiYNCvdFuFDbzT0A7K7Hp2cBsXA==}
 
   micromark-extension-math@3.1.0:
     resolution: {integrity: sha512-lvEqd+fHjATVs+2v/8kg9i5Q0AP2k85H0WUOwpIVvUML8BapsMvh1XAogmQjOCsLpoKRCVQqEkQBB3NhVBcsOg==}
@@ -3493,10 +3475,6 @@ packages:
     resolution: {integrity: sha512-J392jmIP684d7iGsENN0uguL10IGbRdc8bTUSrd/jOLzdWkwg721Fj3JPQGN8tF6fTIrE5HHOIA3nBuwuaeuPQ==}
     engines: {node: '>=16'}
 
-  remark-highlight-mark@1.4.0:
-    resolution: {integrity: sha512-dEm33l2QkUa+UqBHIe8WDsTF+NajRb+l9TE43lH9hKCRWx1rw0i+t3VMUq+GltJ+Oy9XNxF6GI8SxIjPPMQv1A==}
-    engines: {node: '>=18'}
-
   remark-math@6.0.0:
     resolution: {integrity: sha512-MMqgnP74Igy+S3WwnhQ7kqGlEerTETXMvJhrUzDikVZ2/uogJCb+WHUg97hK9/jcfc0dkD73s3LN8zU49cTEtA==}
 
@@ -3512,9 +3490,6 @@ packages:
 
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
-
-  remark-sub-super@1.0.21:
-    resolution: {integrity: sha512-SNUO3GbQ6Qz1MneUIeZyAx85qhq3bd2O5bzdPpr2RgF7hARci8W0oYuppGtkHz6jebxgUYWpnc9+hoFHbiy67g==}
 
   remark-wiki-link@2.0.1:
     resolution: {integrity: sha512-F8Eut1E7GWfFm4ZDTI6/4ejeZEHZgnVk6E933Yqd/ssYsc4AyI32aGakxwsGcEzbbE7dkWi1EfLlGAdGgOZOsA==}
@@ -3629,11 +3604,6 @@ packages:
 
   setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
-
-  shadcn@4.12.0:
-    resolution: {integrity: sha512-o781ieQziCnXH2FKsEqxp1fnbHdbgAPO9inTSPeZ59hQfsZXuMGp3ul8oFSV5KQS4nbUK9b+DrDE6C7OvfKKQQ==}
-    engines: {node: '>=20.18.1'}
-    hasBin: true
 
   shadcn@4.6.0:
     resolution: {integrity: sha512-4XeMwFf8ZZxmqQQp+U+Nsq2M+cY4Da8Joo/EaMdHVc4uVuWSTJoeidlZ3gDjyxXCjYB1FLcxYwR4lYQAH8emOg==}
@@ -3912,10 +3882,6 @@ packages:
 
   unifont@0.7.4:
     resolution: {integrity: sha512-oHeis4/xl42HUIeHuNZRGEvxj5AaIKR+bHPNegRq5LV1gdc3jundpONbjglKpihmJf+dswygdMJn3eftGIMemg==}
-
-  unist-util-add@1.2.0:
-    resolution: {integrity: sha512-2dEJEtrp+n7qu56D46q1tXRC0HQBk7QuQ2I8oLq/0IynTvbNI5vIu4H5otxhXXvUuISmfiRbXcEsuan+JTzZAg==}
-    engines: {node: '>=18'}
 
   unist-util-find-after@5.0.0:
     resolution: {integrity: sha512-amQa0Ep2m6hE2g72AugUItjbuM8X8cGQnFoHk0pGfrFeT9GZhzN5SW8nRsiGKK7Aif4CrACPENkA6P/Lw6fHGQ==}
@@ -5568,6 +5534,7 @@ snapshots:
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@typescript-eslint/project-service@8.62.1(typescript@6.0.3)':
     dependencies:
@@ -5577,6 +5544,7 @@ snapshots:
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@typescript-eslint/scope-manager@8.62.1':
     dependencies:
@@ -5586,6 +5554,7 @@ snapshots:
   '@typescript-eslint/tsconfig-utils@8.62.1(typescript@6.0.3)':
     dependencies:
       typescript: 6.0.3
+    optional: true
 
   '@typescript-eslint/types@8.62.1': {}
 
@@ -5603,6 +5572,7 @@ snapshots:
       typescript: 6.0.3
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   '@typescript-eslint/visitor-keys@8.62.1':
     dependencies:
@@ -7188,10 +7158,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-highlight-mark@1.2.2:
-    dependencies:
-      micromark-extension-highlight-mark: 1.2.0
-
   mdast-util-math@3.0.0:
     dependencies:
       '@types/hast': 3.0.4
@@ -7384,15 +7350,6 @@ snapshots:
       micromark-extension-gfm-task-list-item: 2.1.0
       micromark-util-combine-extensions: 2.0.1
       micromark-util-types: 2.0.2
-
-  micromark-extension-highlight-mark@1.2.0:
-    dependencies:
-      micromark-util-chunked: 2.0.1
-      micromark-util-classify-character: 2.0.1
-      micromark-util-resolve-all: 2.0.1
-      micromark-util-symbol: 2.0.1
-      micromark-util-types: 2.0.2
-      uvu: 0.5.6
 
   micromark-extension-math@3.1.0:
     dependencies:
@@ -8076,12 +8033,6 @@ snapshots:
     dependencies:
       unist-util-visit: 5.1.0
 
-  remark-highlight-mark@1.4.0:
-    dependencies:
-      mdast-util-highlight-mark: 1.2.2
-      micromark-extension-highlight-mark: 1.2.0
-      unist-util-add: 1.2.0
-
   remark-math@6.0.0:
     dependencies:
       '@types/mdast': 4.0.4
@@ -8120,8 +8071,6 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.2
       unified: 11.0.5
-
-  remark-sub-super@1.0.21: {}
 
   remark-wiki-link@2.0.1:
     dependencies:
@@ -8279,46 +8228,6 @@ snapshots:
   set-cookie-parser@3.1.1: {}
 
   setprototypeof@1.2.0: {}
-
-  shadcn@4.12.0(typescript@6.0.3):
-    dependencies:
-      '@babel/core': 7.29.7
-      '@babel/parser': 7.29.7
-      '@babel/plugin-transform-typescript': 7.29.7(@babel/core@7.29.7)
-      '@babel/preset-typescript': 7.29.7(@babel/core@7.29.7)
-      '@dotenvx/dotenvx': 1.75.1
-      '@modelcontextprotocol/sdk': 1.29.0(zod@3.25.76)
-      '@types/validate-npm-package-name': 4.0.2
-      browserslist: 4.28.4
-      commander: 14.0.3
-      cosmiconfig: 9.0.2(typescript@6.0.3)
-      dedent: 1.7.2
-      deepmerge: 4.3.1
-      diff: 8.0.4
-      execa: 9.6.1
-      fast-glob: 3.3.3
-      fs-extra: 11.3.6
-      fuzzysort: 3.1.0
-      kleur: 4.1.5
-      open: 11.0.0
-      ora: 8.2.0
-      postcss: 8.5.16
-      postcss-selector-parser: 7.1.4
-      prompts: 2.4.2
-      recast: 0.23.12
-      stringify-object: 5.0.0
-      tailwind-merge: 3.6.0
-      ts-morph: 26.0.0
-      tsconfig-paths: 4.2.0
-      undici: 7.28.0
-      validate-npm-package-name: 7.0.2
-      zod: 3.25.76
-      zod-to-json-schema: 3.25.2(zod@3.25.76)
-    transitivePeerDependencies:
-      - '@cfworker/json-schema'
-      - babel-plugin-macros
-      - supports-color
-      - typescript
 
   shadcn@4.6.0(@types/node@26.1.0)(typescript@6.0.3):
     dependencies:
@@ -8586,6 +8495,7 @@ snapshots:
   ts-api-utils@2.5.0(typescript@6.0.3):
     dependencies:
       typescript: 6.0.3
+    optional: true
 
   ts-morph@26.0.0:
     dependencies:
@@ -8656,8 +8566,6 @@ snapshots:
       css-tree: 3.2.1
       ofetch: 1.5.1
       ohash: 2.0.11
-
-  unist-util-add@1.2.0: {}
 
   unist-util-find-after@5.0.0:
     dependencies:

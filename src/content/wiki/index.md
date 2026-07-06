@@ -14,7 +14,7 @@ This is the central repository for project documentation, technical notes, and a
 
 ### 📌 Pinned Notes
 
-- [[eduos-overview]]: High-level overview of the EduOS project.
+- [[trak-overview]]: High-level overview of the Trak project.
 - [[git-workflow]]: Standard Git branching and commit practices.
 - [[go-best-practices]]: Guidelines for writing Go backend code.
 - [[database-schema]]: Current architecture of the PostgreSQL database.

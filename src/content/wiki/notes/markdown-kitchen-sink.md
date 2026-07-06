@@ -236,12 +236,12 @@ And here is a longer footnote[^bignote].
 Link internally to other notes in the wiki quickly.
 
 **Preview:**
-You can link to other notes using wiki links: [[git-workflow]] or [[eduos-overview]].
+You can link to other notes using wiki links: [[git-workflow]] or [[trak-overview]].
 
 **How to write it:**
 
 ```markdown
-You can link to other notes using wiki links: [[git-workflow]] or [[eduos-overview]].
+You can link to other notes using wiki links: [[git-workflow]] or [[trak-overview]].
 ```
 
 ## Callouts / Admonitions

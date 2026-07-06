@@ -1,4 +1,5 @@
 // @ts-check
+import { unified } from "@astrojs/markdown-remark";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 import { fileURLToPath } from "url";
@@ -51,14 +52,16 @@ export default defineConfig({
   },
   integrations: [pagefind()],
   markdown: {
-    remarkPlugins: [
-      remarkMath,
-      [wikiLink, wikiLinkOptions],
-      remarkDeflist,
-      remarkCustomSyntax,
-      remarkAlert,
-    ],
-    rehypePlugins: [rehypeKatex],
+    processor: unified({
+      remarkPlugins: [
+        remarkMath,
+        [wikiLink, wikiLinkOptions],
+        remarkDeflist,
+        remarkCustomSyntax,
+        remarkAlert,
+      ],
+      rehypePlugins: [rehypeKatex],
+    }),
     shikiConfig: {
       themes: {
         dark: "github-dark",
