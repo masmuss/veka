@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 import { fileURLToPath } from "url";
 import path from "path";
+import fs from "fs";
 import pagefind from "astro-pagefind";
 import { SITE } from "./src/lib/site-config";
 import remarkMath from "remark-math";
@@ -38,6 +39,21 @@ const BEJAMAS_ASTRO_FONTS = [
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Build a map of wiki filenames to their full paths inside src/content/wiki
+const wikiLinksMap = new Map();
+try {
+	const wikiFiles = fs.readdirSync(path.join(__dirname, "src/content/wiki"), { recursive: true });
+	for (const file of wikiFiles) {
+		if (typeof file === "string" && file.endsWith(".md")) {
+			const slug = file.replace(/\.md$/, ""); // e.g. "notes/git-workflow"
+			const basename = path.basename(slug); // e.g. "git-workflow"
+			wikiLinksMap.set(basename.toLowerCase(), slug);
+		}
+	}
+} catch (e) {
+	console.warn("Failed to read wiki files for wikiLinksMap", e);
+}
+
 export default defineConfig({
 	site: SITE.url,
 	fonts: BEJAMAS_ASTRO_FONTS,
@@ -54,7 +70,15 @@ export default defineConfig({
 		processor: unified({
 			remarkPlugins: [
 				remarkMath,
-				wikiLink,
+				[wikiLink, {
+					pageResolver: (name) => {
+						return [name.replace(/ /g, '-').toLowerCase()];
+					},
+					hrefTemplate: (permalink) => {
+						const resolved = wikiLinksMap.get(permalink) || permalink;
+						return `/wiki/${resolved}`;
+					}
+				}],
 				remarkDeflist,
 				remarkCustomSyntax,
 				remarkAlert,
