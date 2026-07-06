@@ -139,6 +139,11 @@
         color-mix(in oklab, var(--color-border) 50%, transparent);
     }
 
+    :not(pre) > code::before,
+    :not(pre) > code::after {
+      content: "";
+    }
+
     mark {
       background-color: color-mix(
         in oklab,
