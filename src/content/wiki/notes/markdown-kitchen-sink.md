@@ -8,8 +8,6 @@ isPinned: true
 growthStage: "evergreen"
 ---
 
-# Markdown Kitchen Sink
-
 This document serves as a comprehensive guide and test suite for all Markdown features available in the wiki. It demonstrates how various elements are rendered and provides the exact syntax needed to recreate them.
 
 ## Headings
@@ -325,6 +323,7 @@ Inline math: $a^2 + b^2 = c^2$
 Use definition lists to present terms and their corresponding descriptions.
 
 **Preview:**
+
 Apple
 : Pomaceous fruit of plants of the genus Malus in the family Rosaceae.
 
