@@ -1,0 +1,49 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getTags } from "@/lib/wiki/get-tags";
+import NoteCard from "@/components/wiki/NoteCard.astro";
+
+export async function getStaticPaths() {
+  const tags = await getTags();
+  return tags.map(({ tag }) => ({
+    params: { tag },
+    props: { tag, items: tags.find((t) => t.tag === tag)!.items },
+  }));
+}
+
+const { tag, items } = Astro.props;
+---
+
+<BaseLayout title={`#${tag} - wiki`}>
+  <main class="mx-auto max-w-3xl px-4 py-16 md:py-24" data-pagefind-body>
+    <header class="mb-12">
+      <p
+        class="mb-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground"
+      >
+        Tag
+      </p>
+      <h1 class="text-3xl font-bold tracking-tight md:text-4xl">
+        #{tag}
+      </h1>
+      <p class="mt-3 text-muted-foreground">
+        {items.length}
+        {items.length === 1 ? "note" : "notes"}
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      {
+        items
+          .sort((a, b) => b.updatedAt.valueOf() - a.updatedAt.valueOf())
+          .map((item) => (
+            <NoteCard
+              id={item.id}
+              title={item.title}
+              description={item.description}
+              growthStage={item.growthStage}
+            />
+          ))
+      }
+    </div>
+  </main>
+</BaseLayout>

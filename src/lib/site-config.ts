@@ -1,8 +1,8 @@
 export const SITE = {
-  name: "Vekawiki",
+  name: "Veka",
   title: "Astro Garden",
   description: "Minimalist Digital Garden",
-  url: "",
+  url: "https://vekawiki.vercel.app",
   image: "/og-image.png",
   favicon: "/favicon.svg",
 };

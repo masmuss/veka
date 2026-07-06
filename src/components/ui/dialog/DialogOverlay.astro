@@ -1,5 +1,4 @@
 ---
-import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes } from "astro/types";
 
@@ -8,18 +7,16 @@ interface Props extends HTMLAttributes<"div"> {
 }
 
 const { class: className = "", ...rest } = Astro.props as Props;
-
-const titleVariants = cva("font-serif text-balance");
 ---
 
 <div
-  {...rest}
-  data-slot="card-title"
+  hidden
+  data-slot="dialog-overlay"
   class={cn(
-    "text-lg md:text-xl leading-normal font-medium group-data-[size=sm]/card:text-sm",
-    titleVariants(),
+    "data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs fixed inset-0 isolate z-50",
     className,
   )}
+  {...rest}
 >
   <slot />
 </div>

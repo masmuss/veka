@@ -1,7 +1,10 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import "@/assets/styles/global.css";
 import { Font } from "astro:assets";
 import ThemeScript from "@/components/ThemeScript.astro";
+import Header from "@/components/Header.astro";
+import Search from "@/components/search/Search.astro";
 import { SITE } from "@/lib/site-config";
 
 interface Props {
@@ -10,11 +13,7 @@ interface Props {
   image?: string;
 }
 
-const {
-  title,
-  description = SITE.description,
-  image = SITE.image,
-} = Astro.props;
+const { title, description = SITE.description } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,16 +25,20 @@ const {
 
     <Font cssVariable="--font-sans" />
     <Font cssVariable="--font-mono" />
+    <Font cssVariable="--font-heading" />
 
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
 
     <ThemeScript />
+    <ClientRouter />
   </head>
   <body
     class="bg-background text-foreground min-h-screen selection:bg-primary/30 selection:text-primary"
   >
+    <Header />
     <slot />
+    <Search />
   </body>
 </html>

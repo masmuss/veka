@@ -1,13 +1,8 @@
 ---
 import { StickySurface } from "@/components/ui/sticky-surface";
-import { Button } from "@/components/ui/button";
-import { Kbd } from "@/components/ui/kbd";
+import WikiNav from "./WikiNav.astro";
 ---
 
-<StickySurface class="top-8">
-  <Button variant="outline" class="w-full flex justify-between items-center">
-    <span>Search wiki</span>
-    <Kbd>⌘K</Kbd>
-  </Button>
-  <nav class="space-y-1"></nav>
+<StickySurface class="top-[5.5rem]">
+  <WikiNav />
 </StickySurface>

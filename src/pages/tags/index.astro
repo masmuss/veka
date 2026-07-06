@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE } from "@/lib/site-config";
+import { getTags } from "@/lib/wiki/get-tags";
+
+const tags = await getTags();
+---
+
+<BaseLayout title={`Tags - ${SITE.name}`}>
+  <main class="mx-auto max-w-3xl px-4 py-16 md:py-24" data-pagefind-body>
+    <header class="mb-12">
+      <h1 class="text-3xl font-bold tracking-tight md:text-4xl">Tags</h1>
+      <p class="mt-3 text-muted-foreground">
+        {tags.length}
+        {tags.length === 1 ? "tag" : "tags"} across all notes
+      </p>
+    </header>
+
+    <div class="flex flex-wrap gap-2">
+      {
+        tags.map(({ tag, count }) => (
+          <a
+            href={`/tag/${tag}`}
+            class="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1.5 text-sm transition-colors hover:bg-primary/10 hover:text-primary"
+          >
+            {tag}
+            <span class="text-xs text-muted-foreground">{count}</span>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</BaseLayout>

@@ -1,29 +1,26 @@
 ---
-title: "Selamat Datang di Hub Pengetahuanku"
-description: "Pusat catatan digital, dokumentasi proyek, dan eksplorasi ide personal."
-createdAt: 2026-07-04
-updatedAt: 2026-07-04
+title: "Wiki Home"
+description: "Central knowledge base and project documentation."
+createdAt: 2026-07-06
+updatedAt: 2026-07-06
 tags: ["hub", "index"]
 isPinned: true
 growthStage: "evergreen"
 ---
 
-# 🌲 Selamat Datang di Digital Garden Saya
+# 🌲 Welcome to the Project Wiki
 
-Ini adalah tempat saya mengumpulkan potongan-potongan informasi, mendokumentasikan apa yang saya pelajari, dan menghubungkan ide-ide acak. Berbeda dengan blog formal, catatan di sini bersifat organik dan terus berkembang.
+This is the central repository for project documentation, technical notes, and architecture decisions.
 
-### 📌 Catatan Pilihan
+### 📌 Pinned Notes
 
-- [[docker-best-practices]]: Panduan isolasi container homelab.
-- [[dekonstruksi-autio-bmth]]: Bedah produksi audio metal modern.
-- [[git-workflow]]: Strategi branching dan commit message.
-- [[linux-homelab-setup]]: Dasar konfigurasi server Linux.
-- [[rekomendasi-album]]: Album metal dengan produksi gila-gilaan.
-- [[renovasi-kamar]]: Rencana tata ulang kamar 2026.
-- [[catatan-filsafat]]: Catatan santai eksistensialisme dan absurdisme.
+- [[eduos-overview]]: High-level overview of the EduOS project.
+- [[git-workflow]]: Standard Git branching and commit practices.
+- [[go-best-practices]]: Guidelines for writing Go backend code.
+- [[database-schema]]: Current architecture of the PostgreSQL database.
 
-### 🗂️ Telusuri Berdasarkan Topik
+### 🗂️ Categories
 
-- `/koding` — Catatan seputar arsitektur software, DevOps, dan framework.
-- `/musik` — Eksplorasi produksi audio, review, dan rekomendasi.
-- `/personal` — Rencana fisik, catatan buku, dan refleksi diri.
+- `/projects` — Project-specific documentation and specs.
+- `/notes` — General technical notes and best practices.
+- `/architecture` — System design and architecture docs.
