@@ -27,6 +27,7 @@ class SearchController {
   private searchRequestId = 0;
   private debounceTimer: ReturnType<typeof setTimeout> | null = null;
   private initPromise: Promise<void> | null = null;
+  private onKeydownBound: (e: KeyboardEvent) => void;
 
   private el: {
     input: HTMLInputElement | null;
@@ -45,6 +46,7 @@ class SearchController {
       '[data-slot="dialog-content"]',
     );
     this.el = this.queryElements(content);
+    this.onKeydownBound = this.onKeydown.bind(this);
   }
 
   public init() {
@@ -88,7 +90,7 @@ class SearchController {
       }
     });
 
-    document.addEventListener("keydown", this.onKeydown.bind(this));
+    document.addEventListener("keydown", this.onKeydownBound);
     this.el.escBtn?.addEventListener("click", () => this.emit("close"));
     this.el.input?.addEventListener("input", (e) => {
       this.query = (e.target as HTMLInputElement).value;
@@ -103,6 +105,11 @@ class SearchController {
   private exposeGlobalMethods() {
     (window as any).__openSearch = () => this.openSearch();
     (window as any).__closeSearch = () => this.closeSearch();
+  }
+
+  public cleanup() {
+    document.removeEventListener("keydown", this.onKeydownBound);
+    if (this.debounceTimer) clearTimeout(this.debounceTimer);
   }
 
   private emit(action: "open" | "close") {
@@ -379,7 +386,12 @@ class SearchController {
   }
 }
 
+let instance: SearchController | null = null;
+
 export function initSearch(dialogRoot: HTMLElement) {
-  const controller = new SearchController(dialogRoot);
-  controller.init();
+  if (instance) {
+    instance.cleanup();
+  }
+  instance = new SearchController(dialogRoot);
+  instance.init();
 }

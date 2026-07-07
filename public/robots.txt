@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veka-9tg.pages.dev/sitemap-index.xml
