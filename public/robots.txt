@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vekawiki.vercel.app/sitemap-index.xml
+Sitemap: https://veka-9tg.pages.dev/sitemap-index.xml
