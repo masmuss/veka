@@ -42,6 +42,7 @@
     "eslint": "^10.6.0",
     "eslint-plugin-astro": "^2.1.1",
     "lefthook": "^2.1.9",
+    "shadcn": "^4.13.0",
     "mdast-util-find-and-replace": "^3.0.2",
     "prettier": "^3.9.4",
     "prettier-plugin-astro": "^0.14.1",
