@@ -8,6 +8,8 @@ isPinned: true
 growthStage: "evergreen"
 ---
 
+import FileTree from "@/components/wiki/FileTree.astro";
+
 This document serves as a comprehensive guide and test suite for all Markdown features available in the wiki. It demonstrates how various elements are rendered and provides the exact syntax needed to recreate them.
 
 ## Headings
@@ -277,10 +279,12 @@ Use callouts to draw attention to important warnings, notes, or tips.
 Create interactive, collapsible sections for extra content.
 
 **Preview:**
+
 <details>
 <summary>Click to expand</summary>
 
 Here is some hidden content! You can even put **markdown** inside.
+
 </details>
 
 **How to write it:**
@@ -369,3 +373,62 @@ Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.
 ```markdown
 Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.
 ```
+
+## File Tree
+
+Render a project structure or directory tree with collapsible folders and file icons.
+
+**Preview:**
+
+<FileTree>
+
+- public/
+- favicon.svg
+- src/
+  - components/
+    - Header.astro
+    - ThemeToggle.astro
+  - layouts/
+    - BaseLayout.astro
+    - WikiLayout.astro
+  - pages/
+    - index.astro
+    - wiki/
+      - [...slug].astro
+- astro.config.mjs
+- package.json
+- tsconfig.json
+
+</FileTree>
+
+**How to write it:**
+
+```mdx
+import FileTree from "@/components/wiki/FileTree.astro";
+
+<FileTree>
+
+- public/
+- favicon.svg
+- src/
+  - components/
+    - Header.astro
+    - ThemeToggle.astro
+  - layouts/
+    - BaseLayout.astro
+    - WikiLayout.astro
+  - pages/
+    - index.astro
+    - wiki/
+      - [...slug].astro
+- astro.config.mjs
+- package.json
+- tsconfig.json
+
+</FileTree>
+```
+
+Directories end with `/`, files don't. Nest items with indentation to create the tree structure.
+
+> [!note]
+> `FileTree` is an Astro component — wrap your markdown list with it. The import statement goes in the frontmatter section.
