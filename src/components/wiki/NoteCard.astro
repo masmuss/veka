@@ -15,9 +15,10 @@ interface Props {
 }
 
 const { id, title, description, growthStage } = Astro.props;
+const href = id === "index" ? "/wiki" : `/wiki/${id}`;
 ---
 
-<a href={`/wiki/${id}`} class="group block">
+<a href={href} class="group block">
   <Card class="h-full hover:ring-primary">
     <CardHeader class="font-medium leading-snug">
       {title}

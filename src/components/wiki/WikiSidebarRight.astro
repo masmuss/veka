@@ -18,11 +18,15 @@ const tocHeadings = headings.filter((h) => h.depth > 1);
 
 function tocIndent(depth: number): string {
   if (depth <= 2) return "";
-  return "ml-3";
+  if (depth === 3) return "ml-3";
+  if (depth === 4) return "ml-6";
+  return "ml-9";
 }
 ---
 
-<StickySurface class="top-16 space-y-6">
+<StickySurface
+  class="top-24 max-h-[calc(100vh-6rem)] scrollbar-none overflow-y-auto pb-8 pl-1 pr-4 space-y-6"
+>
   {
     tocHeadings.length > 0 && (
       <div>

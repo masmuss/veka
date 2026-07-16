@@ -43,7 +43,7 @@ const breadcrumbs = generateBreadcrumbs(Astro.url.pathname);
 <BaseLayout title={title} description={`${description} - ${SITE.name}`}>
   <div class="min-h-screen bg-background text-foreground">
     <div
-      class="grid grid-cols-1 md:grid-cols-[250px_1fr_250px] gap-8 max-w-7xl mx-auto px-4 relative"
+      class="grid grid-cols-1 md:grid-cols-[0.5fr_1fr_250px] max-w-10/12 md:gap-8 lg:gap-16 mx-auto px-4 relative md:pb-12 lg:pb-20"
     >
       <aside class="hidden md:block">
         <WikiSidebarLeft />
