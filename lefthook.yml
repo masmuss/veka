@@ -4,6 +4,10 @@ pre-commit:
     - name: lint
       run: pnpm lint {staged_files}
       glob: "*.{js,ts,mjs,cjs,astro}"
+
+    - name: check
+      run: pnpm astro check
+
     - name: format
       run: pnpm format --check {staged_files}
       glob: "*.{js,ts,mjs,cjs,astro,json,yaml,yml}"
