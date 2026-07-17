@@ -12,7 +12,7 @@ import wikiLink from "remark-wiki-link";
 import { wikiLinkOptions } from "./src/lib/wiki/wiki-link-resolver.mjs";
 import { remarkCustomSyntax } from "./src/lib/wiki/remark-custom-syntax.mjs";
 import { remarkAlert } from "remark-github-blockquote-alert";
-import remarkDeflist from "remark-deflist";
+import { remarkDefinitionList } from "remark-definition-list";
 import mdx from "@astrojs/mdx";
 
 // bejamas:astro-fonts:start
@@ -58,7 +58,7 @@ export default defineConfig({
       remarkPlugins: [
         remarkMath,
         [wikiLink, wikiLinkOptions],
-        remarkDeflist,
+        remarkDefinitionList,
         remarkCustomSyntax,
         remarkAlert,
       ],
