@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/masmuss/veka/compare/v1.0.0...v1.1.0) (2026-07-17)
+
+
+### Features
+
+* **seo:** add structured SEO components and JSON-LD support ([3f6829a](https://github.com/masmuss/veka/commit/3f6829acfb57f1925c4e4ce66999574a12f339e6))
+
 # 1.0.0 (2026-07-16)
 
 
